@@ -13,7 +13,8 @@ cd build-whatever-demo
 ```
 
 ## Get trusted height \& hash
-> Note: this is only required if you have not synced your node
+
+> Note: this is only required if you have not fully synced your node or if you don't want to wait for it to sync.
 
 [On Celenium](https://celenium.io)
 
@@ -32,6 +33,7 @@ Set `DASer.SampleFrom` to the trusted height\.
 ```bash
 celestia light init
 ```
+
 ## Run the node with core access \& skip auth
 
 ```bash
@@ -56,7 +58,7 @@ When they look like this\, you\'re synced\:
 }
 ```
 
-# Run main\.go to watch the 0xdeadbeef namespace
+## Run main\.go to watch the 0xdeadbeef namespace
 
 ```bash
 cd ~/build-whatever-demo/rollkit-monitor && go run main.go
@@ -73,7 +75,7 @@ blob: not found
 ...
 ```
 
-# Run a Rollkit rollup
+## Run a Rollkit rollup
 
 ### Set up gm rollup
 
@@ -118,7 +120,7 @@ gmd start \
     --minimum-gas-prices="0.025stake"
 ```
 
-# Watch the namespace of the rollup in main\.go
+## Watch the namespace of the rollup in main\.go
 
 ```bash
 ...
@@ -130,7 +132,7 @@ gmd start \
 ⊞ EDS fetched at height 1513755: &{0x14000fa2000 0x140000b0020 16}
 ```
 
-# Send a transaction on the rollup
+## Send a transaction on the rollup
 
 First\, list the keys\:
 
@@ -163,7 +165,7 @@ And of KEY1\:
 gmd query bank balances $KEY1
 ```
 
-# Run the go code with transaction submission
+## Run the go code with transaction submission
 
 ```bash
 cd ~/build-whatever-demo/celestia-monitor && go run main.go
