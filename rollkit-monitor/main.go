@@ -47,7 +47,7 @@ func SubscribeHeaders(ctx context.Context, url string, token string) error {
 	for {
 		select {
 		case header := <-headerChan:
-			fmt.Printf("📝 New header received: Height %d, Hash %x\n", header.Height(), header.Hash())
+			fmt.Printf("🧊 New header received: Height %d, Hash %x\n", header.Height(), header.Hash())
 
 			// fetch all blobs at the height of the new header
 			blobs, err := client.Blob.GetAll(context.TODO(), header.Height(), []share.Namespace{namespace})
